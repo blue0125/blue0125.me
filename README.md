@@ -1,4 +1,6 @@
 blue0125.me
 ===========
 
-php blog
+php blog source
+
+http://www.blue0125.me
