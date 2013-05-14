@@ -1,0 +1,49 @@
+/*
+#adminbar{
+	direction: ltr;
+	color: #CCC;
+	font: normal 13px/28px sans-serif;
+	height: 28px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-width: 600px;
+	z-index: 99999;
+	background: #464646;
+	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0,#373737),color-stop(18%,#464646));
+	background-image: -webkit-linear-gradient(bottom,#373737 0,#464646 5px);
+	background-image: -moz-linear-gradient(bottom,#373737 0,#464646 5px);
+	background-image: -o-linear-gradient(bottom,#373737 0,#464646 5px);
+	background-image: linear-gradient(to top,#373737 0,#464646 5px);
+}
+*/
+#admin {
+	padding: 60px 0;
+}
+
+
+#aside{
+	min-height: 28px;
+	position: relative;
+}
+#aside li {
+	min-height: 28px;
+	position: relative;
+}
+#aside a {
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 18px;
+	padding: 0;
+}
+
+
+
+/*pagination*/
+/*.pagination{ display: inline-block; font-family: Tahoma; height: 24px; line-height: 22px; }*/
+.pagination a { border: 1px solid #7E7E7E; float: left; font-size: 13px; height: 18px; line-height: 18px; margin-right: 5px; min-width: 15px; text-align: center; vertical-align: middle; white-space: nowrap; _width: 15px; }
+.pagination .page-cur{ border: 1px solid #7E7E7E; color: #7E7E7E; float: left; font-family: Arial,"宋体b8b\4f53"; font-size: 13px; height: 18; line-height: 18px; margin-right: 5px; min-width: 15px; text-align: center; vertical-align: middle; white-space: nowrap; _width: 15px; background: #4690CD; border: 1px solid #4690CD; color: white; cursor: default; font-weight: bold; text-decoration: none; }
+
+.pagination .goto { width: 20px; }
+

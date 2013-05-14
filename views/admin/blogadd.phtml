@@ -1,0 +1,42 @@
+{include file='admin/library/header'}
+<script type="text/javascript" src="../staitc/js/jquery.form.js"></script>
+
+<script type="text/javascript" src="../staitc/js/kindeditor/kindeditor-min.js"></script>
+<script type="text/javascript" src="../staitc/js/utils.js"></script>
+<form action="/admin/blog&ac=save" method="POST" id="frm" class="form-actions">
+	<div>
+		标题：<input type="text" name="title" value="{$info.title}" class="input-xxlarge" />
+		<span id="title_info" class="error"></span>
+	</div>
+	<div>
+		内容：
+		<textarea name="content" id="content">{$info.content}</textarea>
+		<span id="content_info" class="error"></span>
+	</div>
+	<div>
+		发布：
+		<label class="radio inline"><input type="radio" name="status" value="0" />否       </label>
+		<label class="radio inline"><input type="radio" name="status" value="1" checked/>是</label>
+	</div>
+	<div>
+		<input type="hidden" name="bid" value="{$info.bid}" />
+		<input type="submit" name="" value="提交" class="btn" /> 
+	</div>
+</form>
+<script>
+	var successFun = function(res) {
+		if (res.code == 200) {
+			alert(res.data.success_message);
+		}
+	}
+	$(document).ready(function(){
+
+		var editor;
+		editor = createKindEditor('content');
+
+		var frmOptions = {dataType:'json',error:frmError,success:frmSuccess,beforeSerialize:beforeSerialize}
+		$('#frm').ajaxForm(frmOptions);
+
+	});
+</script>
+{include file='admin/library/footer'}

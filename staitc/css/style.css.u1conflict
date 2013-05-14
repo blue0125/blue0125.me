@@ -24,27 +24,13 @@ a:visited{color:#669;text-decoration:none}
 a:hover{color:#fff;text-decoration:none;background:#039}
 a:active{color:#fff;text-decoration:none;background:#f93}
 a img{border-width:0;vertical-align:middle}
+body,td,th{font:12px Arial,Helvetica,sans-serif;line-height:1.62}
 table{border-collapse:collapse;border:0;padding:0;margin:0}
 wbr:after{content:"\00200B"}
 textarea{resize:none}
 input[type=text]:focus,input[type=password]:focus,textarea:focus{outline:0}
 ol{padding:0 0 0 20px}
 textarea{font-family:Arial;overflow:auto}
-input{font-size:18px}
-
+input{font-size:12px}
 .clearfix{zoom:1;_height:1px}
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-
-body{font: 18px/1.5 tahoma,"宋体"}
-
-
-
-/*pagination*/
-/*.pagination{ display: inline-block; font-family: Tahoma; height: 24px; line-height: 22px; }*/
-.pagination a { border: 1px solid #7E7E7E; float: left; font-size: 13px; height: 18px; line-height: 18px; margin-right: 5px; min-width: 15px; text-align: center; vertical-align: middle; white-space: nowrap; _width: 15px; }
-.pagination .page-cur{ border: 1px solid #7E7E7E; color: #7E7E7E; float: left; font-family: Arial,"宋体b8b\4f53"; font-size: 13px; height: 18; line-height: 18px; margin-right: 5px; min-width: 15px; text-align: center; vertical-align: middle; white-space: nowrap; _width: 15px; background: #4690CD; border: 1px solid #4690CD; color: white; cursor: default; font-weight: bold; text-decoration: none; }
-
-.pagination .goto { width: 20px; }
-
-/*admin*/
-

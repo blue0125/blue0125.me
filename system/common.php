@@ -2,6 +2,22 @@
 
 //$Id$
 
+function checkAuth() {
+	session_start(); 
+	if (empty($_SESSION['id']) && ! $_SESSION['root']) {
+		header('Location: /login');
+		exit();
+	}
+
+}
+
+function stripPageNow($url)
+{
+	$url = preg_replace('/page=(\d)/', '', $url);
+
+	return $url;
+}
+
 /**
  * 加载基本配置
  */
@@ -50,65 +66,3 @@ function site_set_offline() {
 	exit;
 }
 
-//显示错误页面
-
-/**
- * 手动加载类
- */
-function & load_class($class, $directory = 'system') {
-	static $_classes = array();
-
-	if (isset($_classes[$class])) {
-		return $_classes[$class];
-	}
-
-	if (file_exists(DIR . '/' . $directory . '/' . $class . '.php')) {
-		require(DIR . '/' . $directory . '/' . $class . '.php');
-	}
-
-	if ( ! class_exists($class)) {
-		exit('找不到：' . $class . '.php');
-	}
-
-	is_load_class($class);
-	$_classes[$class] = new $class();
-
-	return $_classes[$class];
-}
-
-/**
- * 是否已经加载
- */
-function & is_load_class($class = '') {
-	static $_is_loaded = array();
-
-	if ($class != '') {
-		$_is_loaded[strtolower($class)] = $class;
-	}
-
-	return $_is_loaded;
-}
-
-function remove_invisible_characters($str, $url_encoded = TRUE) {
-	$non_displayables = array();
-
-	// every control character except newline (dec 10)
-	// carriage return (dec 13), and horizontal tab (dec 09)
-
-	if ($url_encoded)
-	{   
-		$non_displayables[] = '/%0[0-8bcef]/';  // url encoded 00-08, 11, 12, 14, 15
-		$non_displayables[] = '/%1[0-9a-f]/'; // url encoded 16-31
-	}   
-
-	$non_displayables[] = '/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]+/S'; // 00-08, 11, 12, 14-31, 127
-
-	do  
-	{   
-		$str = preg_replace($non_displayables, '', $str, -1, $count);
-	}   
-	while ($count);
-
-	return $str;
-
-}
